@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru");
+
+    cout << "\tIoreth's Song" << endl;
+    cout << "On windsand waters may you cross," << endl;
+    cout << "see mountains white and blue." << endl;
+    cout << "But on your road, lest not forget" << endl;
+    cout << "the love I have for you." << endl;
+    cout << "Dance on beaches in Anfalas," << endl;
+    cout << "sleep in moonlit fields of view." << endl;
+    cout << "May you cross another Golden Age" << endl;
+    cout << "with preciousness free-flowing." << endl;
+    cout << "With Halfling, Elves and Dwarves engage," << endl;
+    cout << "their wisdom on you bestowing." << endl << endl << endl;
+
+
+    cout << "Every" << endl;
+    cout << "\tHunter" << endl;
+    cout << "\t\tWants" << endl;
+    cout << "\t\t\tTo know" << endl;
+    cout << "\t\t\t\tWhere" << endl;
+    cout << "\t\t\t\t\tDoes Pheasant" << endl;
+    cout << "\t\t\t\t\t\t\tSit" << endl << endl << endl;
+
+
+    cout << "\t\t\t\tПродам щенков. " << endl;
+    cout << "\t\t\t\tПорода: Немецкая овчарка. " << endl;
+    cout << "\t\t\t\tТел.: 225-58-67" << endl;
+    cout << "\t\t\t\t225\t |55-98|" << endl;
+    cout << "\t\t\t\t225\t |56-99|" << endl;
+    cout << "\t\t\t\t225\t |57-00|" << endl;
+
+    return 0;
+}
