@@ -1,0 +1,133 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	int a, b, c, price, amount, discount, speed; 
+	float deal, gb;
+	int key;
+
+	cout << "Привет! Давай выберем, что нам необходимо?" << endl;
+	cout << "Нажми 1 - Сумма, произведение и средне арифметическое a и b." << endl;
+	cout << "Нажми 2 - Сумма, произведение и среднее арифметическое a, b и c." << endl;
+	cout << "Нажми 3 - Общая стоимость ноутбука(ов) с учётом скидки." << endl;
+	cout << "Нажми 4 - Зарплата менеждера от продаж." << endl;
+	cout << "Нажми 5 - За сколько скачается фильм." << endl;
+	cout << "Нажми любую другу клавишу и ты выйдешь из программы." << endl;
+	cin >> key;
+
+	switch (key)
+	{
+		case 1:
+		
+			cout << "Введи переменную 'a': " << endl;
+			cin >> a;
+			cout << "Введи переменную 'b': " << endl;
+			cin >> b;
+			cout << "Для суммы введи - 1." << endl;
+			cout << "Для произведения введи - 2." << endl;
+			cout << "Для вычисления среднего арифметического - 3." << endl;
+			cin >> key;
+
+			switch (key)
+			{
+
+			case 1:
+				cout << "Сумма a+b = " << a + b;
+				break;
+			case 2:
+				cout << "Произведение a*b = " << a * b;
+				break;
+			case 3:
+				cout << "Среднее арифметическое 'a' и 'b' = " << a + b / 2;
+				break;
+
+			default:
+				cout << "Введен неверный символ. Выход из программы.";
+				break;
+			}
+			
+			break;
+		
+
+		case 2:
+		
+			cout << "Введи переменную 'a': " << endl;
+			cin >> a;
+			cout << "Введи переменную 'b': " << endl;
+			cin >> b;
+			cout << "Ввели переменную 'c': " << endl;
+			cin >> c;
+			cout << "Для суммы введи - 1." << endl;
+			cout << "Для произведения введи - 2." << endl;
+			cout << "Для вычисления среднего арифметического - 3." << endl;
+			cin >> key;
+
+			switch (key)
+			{
+			case 1:
+				cout << "Сумма a+b+c = " << a + b + c;
+				break;
+			case 2:
+				cout << "Произведение a*b*c = " << a * b * c;
+				break;
+			case 3:
+				cout << "Среднее арифметическое 'a','b' и 'c' = " << a + b + c / 3;
+				break;
+
+			default:
+				cout << "Введен неверный символ. Выход из программы.";
+				break;
+			}
+			
+			break;
+		
+		case 3:
+
+			cout << "Введите цену одного ноутбука: " << endl;
+			cin >> price;
+			cout << "Введите кол-во покупаемых ноутбуков: " << endl;
+			cin >> amount;
+			cout << "Введите скидку: " << endl;
+			cin >> discount;
+			cout << "Цена с учётом скидки: " << (price * amount) * (100 - discount) / 100;
+			break;
+
+		case 4:
+
+			cout << "Введите сумму продаж за месяц в $: " << endl;
+			cin >> deal;
+			cout << "Месячная зарплата с учётом 5% от продаж в $: " << 100 + (deal /100) * 5;
+			break;
+
+		case 5:
+
+		{
+			int hour, minutes, sec, sec_all, download;
+			float bit, speed_bit;
+
+		cout << "Введите размер файла в ГБ: " << endl;
+		cin >> gb;
+		cout << "Введите скорость интернет-соединения в мбит/с: " << endl;
+		cin >> speed;
+		speed_bit = speed * 1048576;
+		bit = gb * 8589934592;
+		download = bit / speed_bit;
+		sec_all = bit / speed_bit;
+		hour = sec_all / 3600;
+		minutes = (sec_all - hour * 3600) / 60;
+		sec = sec_all - hour * 3600 - minutes * 60;
+		cout << "Файл скачается через " << hour << " часа(ов) " << minutes << " минут и " << sec << " секунд.";
+		
+		break;
+		}
+
+		default:
+			cout << "Завершение программы. До свидания!";
+			break;
+
+	}
+
+}
