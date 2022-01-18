@@ -1,0 +1,86 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    
+    //Home task #6.1.1
+    cout << "#6.1.1\n\n";
+
+    int a, sum1 = 0;
+    cout << "Введите целое число от которого начнётся счёт: " << endl;
+    cin >> a;
+    for (int i = a; i <= 500;i++)
+    {
+        sum1 += i;
+    }
+
+    cout <<"Сумма целых чисел от " << a << " до 500 = " << sum1 << "\n\n";
+
+    //Home task #6.1.2
+    cout << "#6.1.2\n\n";
+
+    int x, y, sum2 = 1;
+    cout << "Введите целое число: " << endl;
+    cin >> x;
+    cout << "Введите степень: " << endl;
+    cin >> y;
+
+    cout << "Число " << x <<" в степени " << y << " = " << pow(x, y) << endl;
+
+    for (int i = 1; i <= y; i++)
+    {
+        sum2 *= x;
+    }
+
+    cout << "Число " << x << " в степени " << y << " = " << sum2 << "\n\n";
+
+
+    //Home task #6.1.3
+    cout << "#6.1.3\n\n";
+
+    float sum3 = 0;
+    cout << "Найдём среднее арифметическое всех целый чисел от 1 до 1000." << endl;
+
+    for (int i = 1; i <= 1000; i++)
+    {
+        sum3 += i;
+    }
+
+    cout << "Среднее арифметическое всех целый чисел = " << sum3 / 1000 << "\n\n";
+
+    //Home task #6.1.4
+    cout << "#6.1.4\n\n";
+
+    int A, sum4 = 1;
+
+    cout << "Введите число от которого будет вычесляться произведение всех целый чисел до 20: " << endl;
+    cin >> A;
+
+    for (int i = A; i <= 20; i++)
+    {
+        sum4 *= i;
+    }
+
+    cout << "Сумма произведения целый чисел от " << A << " до 20 = " << sum4 << "\n\n";
+
+    //Home task #6.1.5
+    cout << "#6.1.5\n\n";
+
+    int k, sum5;
+    
+    cout << "Введите номер варианта таблицы умножение: " << endl;
+    cin >> k;
+    cout << endl;
+
+    for (int i = 1; i <= 10; i++)
+    {
+        sum5 = k;
+        sum5 *= i;
+        cout << k << " x "  << i << " = " << sum5 << endl;
+    }
+
+}
