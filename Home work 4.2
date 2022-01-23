@@ -1,0 +1,206 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru");
+
+    //Home task 4.2.1
+
+    cout << "Home task 4.2.1 \n\n";
+
+    int barskaya = 650, che_guevara = 550, anarchy = 395, partisan = 450, sprite = 60, pepsi = 120, fanta = 80, choiceUserPizza, choiceUserDrink, amountPizza, amountDrink, temp;
+    float pricePizza, priceDrink, orderPrice = 0;
+    string namePizza, nameDrink;
+
+    cout << "Добро пожаловать в нашу пиццерию! Для заказа той или иной позиции введите код." << endl;
+    cout << "В нашей пиццерии действует система скидок!" << endl; 
+    cout << "Каждая 5 - ая пицца в подарок!" << endl;
+    cout << "Каждый напиток дороже 80 рублей, при заказе от 3 - ех, скидка на напитки 15 % !" << endl;
+    cout << "Если общая сумма заказа больше 1500 рублей - скидки 20% на всю сумму заказа!" << endl;
+    cout << "Код 1 - пицца Барская 650 руб." << endl;
+    cout << "Код 2 - пицца Че-Гевара 550 руб." << endl;
+    cout << "Код 3 - пицца Анархия 395 руб." << endl;
+    cout << "Код 4 - пицца Партизан 450 руб." << endl;
+    cout << "Код 5 - не хочу пиццу." << endl;
+
+    cin >> choiceUserPizza;
+
+    switch (choiceUserPizza)
+    {
+    case(1):
+        namePizza = "Барская";
+        pricePizza = barskaya;
+        cout << "Количество?" << endl;
+        cin >> amountPizza;
+        break;
+    case(2):
+        namePizza = "Че-Гевара";
+        pricePizza = che_guevara;
+        cout << "Количество?" << endl;
+        cin >> amountPizza;
+        break;
+    case(3):
+        namePizza = "Анархия";
+        pricePizza = anarchy;
+        cout << "Количество?" << endl;
+        cin >> amountPizza;
+        break;
+    case(4):
+        namePizza = "Партизан";
+        pricePizza = partisan;
+        cout << "Количество?" << endl;
+        cin >> amountPizza;
+        break;
+    case(5):
+        break;
+    default:
+        choiceUserPizza = 5;
+        break;
+    }
+
+    cout << "Так же у нас есть газировка. Выбирете код: " << endl;
+    cout << "Код 1 - Sprite." << endl;
+    cout << "Код 2 - Pepsi." << endl;
+    cout << "Код 3 - Fanta." << endl;
+    cout << "Код 4 - не хочу напиток." << endl;
+
+    cin >> choiceUserDrink;
+
+    switch (choiceUserDrink)
+    {
+    case(1):
+        nameDrink = "Спрайт";
+        priceDrink = sprite;
+        cout << "Количество?" << endl;
+        cin >> amountDrink;
+        break;
+    case(2):
+        nameDrink = "Пепси";
+        priceDrink = pepsi;
+        cout << "Количество?" << endl;
+        cin >> amountDrink;
+        break;
+    case(3):
+        nameDrink = "Фанта";
+        priceDrink = fanta;
+        cout << "Количество?" << endl;
+        cin >> amountDrink;
+        break;
+    case(4):
+        break;
+    default:
+        choiceUserDrink = 4;
+        break;
+    }
+
+    temp = amountPizza;
+
+    if (amountPizza >= 5) {
+        cout << "\nКаждая 5-ая пицца в подарок!" << endl;
+        amountPizza = amountPizza - amountPizza / 5;
+    }
+    orderPrice = orderPrice + amountPizza * pricePizza;
+    if ((amountDrink >= 3) && (priceDrink >= 80)) {
+        cout << "\nСкидка 15% на напитки!" << endl;
+        orderPrice = orderPrice + amountDrink * priceDrink * 0.85;
+    } 
+    else {
+        orderPrice = orderPrice + amountDrink * priceDrink;
+    }
+    if (orderPrice > 1500) {
+        cout << "\nУ Вас скидка 20%!" << endl;
+        orderPrice = orderPrice * 0.80;
+    }
+    if (choiceUserPizza >= 5 && choiceUserDrink >= 4) {
+        cout << "Сожалеем, что Вам ничего не понравилось :(";
+    } 
+    else if (choiceUserPizza > 0 && choiceUserPizza < 5 && choiceUserDrink == 4) {
+        cout << "\nВаш чек: " << endl;
+        cout << "Пицца -  " << namePizza << ", количество - " << temp << ", цена - " << pricePizza << " рублей за штуку." << endl;
+        cout << "Сумма Вашего заказа: " << orderPrice << " рублей." << "\n\n";
+    }
+    else if (choiceUserDrink > 0 && choiceUserDrink < 4 && choiceUserPizza == 5) {
+        cout << "\nВаш чек: " << endl;
+        cout << "Напиток - " << nameDrink << ", количество - " << amountDrink << ", цена - " << priceDrink << " рублей за стакан 0.5л." << endl;
+        cout << "Сумма Вашего заказа: " << orderPrice << " рублей." << "\n\n";
+    } 
+    else {
+        cout << "\nВаш чек: " << endl;
+        cout << "Пицца -  " << namePizza << ", количество - " << temp << ", цена - " << pricePizza << " рублей за штуку." << endl;
+        cout << "Напиток - " << nameDrink << ", количество - " << amountDrink << ", цена - " << priceDrink << " рублей за стакан 0.5л." << endl;
+        cout << "Сумма Вашего заказа: " << orderPrice << " рублей." << "\n\n";
+    }
+
+    
+   
+
+    //Home task #4.2.2
+    cout << "Home task 4.2.2 \n\n";
+
+    int manager01, manager02, manager03, bestManager, temp;
+    float  salary01, salary02, salary03;
+    
+    cout << "Продажи первого менеджера: " << endl;
+    cin >> manager01;
+    cout << "Продажи второго менеджера: " << endl;
+    cin >> manager02;
+    cout << "Продажи третьего менеджера: " << endl;
+    cin >> manager03;
+
+    if (manager01 < 500) {
+        salary01 = 200 + manager01 * 0.03;
+    }
+    else if ((manager01 > 500) && (manager01 < 1000)) {
+        salary01 = 200 + manager01 * 0.05;
+    }
+    else {
+        salary01 = 200 + manager01 * 0.08;
+    }
+    if (manager02 < 500) {
+        salary02 = 200 + manager01 * 0.03;
+    }
+    else if ((manager02 > 500) && (manager02 < 1000)) {
+        salary02 = 200 + manager02 * 0.05;
+    }
+    else {
+        salary02 = 200 + manager02 * 0.08;
+    }
+    if (manager03 < 500) {
+        salary03 = 200 + manager03 * 0.03;
+    }
+    else if ((manager03 > 500) && (manager03 < 1000)) {
+        salary03 = 200 + manager03 * 0.05;
+    }
+    else {
+        salary03 = 200 + manager03 * 0.08;
+    }
+    if (manager01 > manager02) {
+        bestManager = 1;
+        temp = manager01;
+    } 
+    else {
+        bestManager = 2;
+        temp = manager02;
+    }
+    if (manager03 > temp) {
+        bestManager = 3;
+    } 
+    switch (bestManager)
+    {
+    case 1:
+        salary01 += 200;
+        break;
+    case 2:
+        salary02 += 200;
+        break;
+    case 3:
+        salary03 += 200;
+        break;
+    }
+
+    cout << "Лучший менеджер - " << bestManager << "!" << endl;
+    cout << "Зарплата первого менеджера: " << salary01 << endl;
+    cout << "Зарплата второго менеджера: " << salary02 << endl;
+    cout << "Зарплата третьего менеджера: " << salary03 << endl;
+}
