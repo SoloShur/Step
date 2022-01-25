@@ -1,0 +1,169 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "ru");
+    
+    ////Home task #4.1.1
+    cout << "Home task #4.1.1\n\n";
+    
+    int luck[6], swap[4], sum[6][6];
+    int number, temp, sumLeft, sumRight, max = 0;
+
+    cout << "Введите шестизначное число: " << endl;
+    cin >> number;
+
+    if (number / 100000 < 1) {
+        cout << "Неверное число." << endl;
+    } 
+    else if (number /100000 > 9) {
+        cout << "Неверное число." << endl;
+    }
+    else {
+        temp = number;
+        for (int i = 0; i <= 6; i++) {
+            luck[i] = temp % 10;
+            temp /= 10;
+        }
+        sumLeft = luck[0] + luck[1] + luck[2];
+        sumRight = luck[3] + luck[4] + luck[5];
+
+        if (sumLeft == sumRight) {
+            cout << "Число счастливое!" << endl;
+        }
+        else {
+            cout << "Число несчастливое :(" << endl << endl;;
+        }
+
+    }
+    
+
+
+    //Home task #4.1.2
+    cout << "\nHome task #4.1.2\n\n";
+
+    
+    cout << "Введите четырёхзначное число: " << endl;
+    cin >> number;
+
+    if (number / 1000 < 1) {
+        cout << "Неверное число." << endl;
+    }
+    else if (number / 1000 > 9) {
+        cout << "Неверное число." << endl;
+    }
+    else {
+        temp = number;
+        for (int i = 3; i >-1; i--) {
+            swap[i] = temp % 10;
+            temp /= 10;
+        }
+        temp = swap[0];
+        swap[0] = swap[1];
+        swap[1] = temp;
+        temp = swap[2];
+        swap[2] = swap[3];
+        swap[3] = temp;
+
+        for (int i = 0; i <= 3; i++) {
+            cout << swap[i];
+        }
+    }
+
+
+    //Home task #4.1.3
+    cout << "\nHome task #4.1.3\n\n";
+
+    
+    cout << "Введите семь целых чисел: " << endl;
+  
+    for (int i = 0; i < 7; i++) {
+        cout << "Введите число " << i + 1 << ":" << endl;
+        cin >> sum[0][i];
+    }
+    for (int i = 0; i < 7; i++) {
+        if (sum[0][i] > max)
+            max = sum[0][i];
+    }
+
+    cout << "\n" << "Макисмально значение из введенных чисел: " << max;
+
+
+    //Home task 4.1.4
+    cout << "\nHome task # 4.1.4\n\n";
+
+
+    int fueal, tank = 300, ab, bc, abc, weight;
+
+    cin >> ab;
+    cin >> bc;
+    cin >> weight;
+    
+    if (weight <= 500) {
+        abc = ab + bc;
+        fueal = 300 / 1;
+        if (fueal >= abc)
+            cout << "Дозаправка не требуется." << endl;
+        else if (fueal < ab)
+            cout << "Топлива не хватит долететь до пункта B." << endl;
+        else if (fueal - ab >= ab && fueal - ab < bc) {
+            fueal = bc * 1 - (fueal - ab);
+            cout << "Нужна дозаправка в пункте B, нужно заправить - " << fueal << " топлива." << endl;
+        }
+    }
+    if (weight > 500 && weight <= 1000) {
+        abc = ab + bc;
+        fueal = 300 / 4;
+        if (fueal >= abc) {
+            cout << "Дозаправка не требуется." << endl;
+        } 
+        else if (fueal < ab) {
+            cout << "Топлива не хватит долететь до пункта B." << endl;
+        }   
+        else if (fueal >= ab && fueal - ab < bc) {
+            fueal = bc * 4 - (fueal - ab);
+            if (tank < fueal) {
+                cout << "Нам хватит долететь до пункта B. Но размер бака не позвляет заправить столько топлива, чтобы долететь до пункта C :(" << endl;
+            }
+            cout << "Нужна дозаправка в пункте B, нужно заправить - " << fueal << " литров топлива." << endl;
+        }
+    }
+    if (weight > 1000 && weight <= 1500) {
+        abc = ab + bc;
+        fueal = 300 / 7;
+        if (fueal >= abc) {
+            cout << "Дозаправка не требуется." << endl;
+        }
+        else if (fueal < ab) {
+            cout << "Топлива не хватит долететь до пункта B." << endl;
+        }
+        else if (fueal >= ab && fueal - ab < bc) {
+            fueal = bc * 7 - (fueal - ab);
+            if (tank < fueal) {
+                cout << "Нам хватит долететь до пункта B. Но размер бака не позвляет заправить столько топлива, чтобы долететь до пункта C :(" << endl;
+            }
+            cout << "Нужна дозаправка в пункте B, нужно заправить - " << fueal << " литров топлива." << endl;
+        }
+    }
+    if (weight > 1500 && weight <= 2000) {
+        abc = ab + bc;
+        fueal = 300 / 9;
+        if (fueal >= abc) {
+            cout << "Дозаправка не требуется." << endl;
+        }
+        else if (fueal < ab) {
+            cout << "Топлива не хватит долететь до пункта B." << endl;
+        }
+        else if (fueal >= ab && fueal - ab < bc) {
+            fueal = bc * 9 - (fueal - ab);
+            if (tank < fueal) {
+                cout << "Нам хватит долететь до пункта B. Но размер бака не позвляет заправить столько топлива, чтобы долететь до пункта C :(" << endl;
+            }
+            cout << "Нужна дозаправка в пункте B, нужно заправить - " << fueal << " литров топлива." << endl;
+        }
+    }
+    if (weight > 2000) {
+        cout << "Груз слишком тяжёлый, самолёт не взлетит." << endl;
+    }
+}
